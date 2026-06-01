@@ -5,12 +5,11 @@
 
 Site institucional desenvolvido com foco em performance, organização modular, responsividade e facilidade de gerenciamento.
 
-## ✨ Sobre o projeto
+## Sobre o projeto
 
 Este projeto foi criado para oferecer uma estrutura moderna e escalável para sites institucionais, utilizando uma arquitetura simples e organizada em PHP.
 
 O sistema conta com:
-
 - Estrutura modular
 - Layout responsivo
 - SEO otimizado
@@ -18,9 +17,8 @@ O sistema conta com:
 - Organização de assets
 - Navegação dinâmica
 - Estrutura preparada para expansão
-- Compatibilidade com hospedagens compartilhadas
 
-## 🚀 Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - PHP
 - HTML5
@@ -28,7 +26,7 @@ O sistema conta com:
 - JavaScript
 - jQuery
 
-## 📁 Estrutura do projeto
+## Estrutura do projeto
 
 ```bash
 /assets       → Arquivos CSS, JS, imagens e recursos visuais
@@ -38,7 +36,7 @@ O sistema conta com:
 /footer.php   → Rodapé do site
 ````
 
-## 🎨 Recursos
+## Recursos
 
 * Design moderno
 * Estrutura leve
@@ -47,7 +45,7 @@ O sistema conta com:
 * Estrutura preparada para SEO
 * Compatível com dispositivos móveis
 
-## 🔒 Observações
+## Observações
 
 Alguns arquivos e pastas foram ignorados no Git por conterem:
 
@@ -57,7 +55,7 @@ Alguns arquivos e pastas foram ignorados no Git por conterem:
 * Notícias e mídias
 * Arquivos locais de ambiente
 
-## 👨‍💻 Autor
+## Autor
 
 Desenvolvido por Mateus Gonçalves.
 
