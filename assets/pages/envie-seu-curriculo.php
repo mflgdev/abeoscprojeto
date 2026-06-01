@@ -3,11 +3,9 @@ $title = "Trabalhe Conosco - Envie seu Currículo";
 $description = "Envie seu currículo para fazer parte do nosso time. Estamos sempre em busca de profissionais dedicados e apaixonados pelo que fazem. Junte-se a nós e ajude a transformar vidas através da educação e do apoio social.";
 $image = BASE_URL . "/assets/img/pagina-especifica.jpg";
 
-// Função auxiliar para limpar entradas
 function limpar($dado) {
   return htmlspecialchars(strip_tags(trim($dado)));
 }
-// Detecta o AJAX
 function is_ajax() {
   return isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
          strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';

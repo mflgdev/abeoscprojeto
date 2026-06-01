@@ -17,7 +17,6 @@ if (!$unidade) {
     echo "Unidade não encontrada.";
     exit;
 }
-// SEO dinâmico para unidade
 $title = $unidade['nome'] . " — Unidade | Associação Beneficente Evangélica ABE";
 $description = mb_strimwidth(strip_tags($unidade['descricao']), 0, 160, '...');
 $image = !empty($unidade['imagem']) 
@@ -33,14 +32,12 @@ $url = BASE_URL . "/unidade/" . $slug;
   <title><?= htmlspecialchars($title) ?></title>
   <meta name="description" content="<?= htmlspecialchars($description) ?>" />
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="<?= htmlspecialchars($title) ?>" />
   <meta property="og:description" content="<?= htmlspecialchars($description) ?>" />
   <meta property="og:image" content="<?= $image ?>" />
   <meta property="og:url" content="<?= $url ?>" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="<?= htmlspecialchars($title) ?>" />
   <meta name="twitter:description" content="<?= htmlspecialchars($description) ?>" />

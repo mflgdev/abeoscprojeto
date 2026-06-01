@@ -38,7 +38,7 @@ $image = BASE_URL . "/assets/img/pagina-especifica.jpg";
     </p>
   </div>
 </section>
-    <!-- CARDS MISSÃO, VISÃO E VALORES -->
+    <!-- Cards Missão, Visão e Valores -->
     <section class="cards-container" aria-label="Missão, Visão e Valores">
       <article class="card">
         <h3><i class="fas fa-bullseye"></i> Missão</h3>
@@ -139,7 +139,7 @@ $image = BASE_URL . "/assets/img/pagina-especifica.jpg";
     </article>
   </div>
 </section>
-    <!-- TIMELINE HORIZONTAL -->
+    <!-- Timeline Horizontal -->
 <section class="timeline-horizontal" aria-label="Linha do Tempo da ABE">
   <h2 class="timeline-title">Nossa História</h2>
   <div class="timeline-wrapper">

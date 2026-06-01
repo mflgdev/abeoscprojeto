@@ -16,7 +16,6 @@ $banners = $stmt_banners->fetchAll(PDO::FETCH_ASSOC);
   <?php include_once __DIR__ . '/../../includes/head.php'; ?>
 </head>
 <body>
-  <!-- Conteúdo Principal -->
   <main>
 <section class="doacao-page" aria-label="Página de Doação">
   <!-- Bloco QR Code + Dados -->

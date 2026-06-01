@@ -20,10 +20,8 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 $imagem_noticia = $noticia['imagem_noticia'] ?: 'noticia.jpg';
 
 if (strpos($imagem_noticia, '/') === 0 || strpos($imagem_noticia, 'http') === 0) {
-    // Caminho absoluto ou URL já completa
     $caminho_imagem = $imagem_noticia;
 } else {
-    // Apenas nome do arquivo, montar o caminho
     $caminho_imagem = '/assets/noticias/img_capa/' . $imagem_noticia;
 }
     ?>
@@ -34,14 +32,12 @@ if (strpos($imagem_noticia, '/') === 0 || strpos($imagem_noticia, 'http') === 0)
   <title><?= htmlspecialchars($noticia['titulo']) ?> | Associação Beneficente Evangélica</title>
   <meta name="description" content="<?= htmlspecialchars(mb_strimwidth(strip_tags($noticia['conteudo']), 0, 160, '...')) ?>" />
   
-  <!-- Open Graph -->
   <meta property="og:title" content="<?= htmlspecialchars($noticia['titulo']) ?>" />
   <meta property="og:description" content="<?= htmlspecialchars(mb_strimwidth(strip_tags($noticia['conteudo']), 0, 160, '...')) ?>" />
   <meta property="og:image" content="<?= BASE_URL . $caminho_imagem ?>" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="<?= BASE_URL . '/noticias/' . $noticia['id_noticia'] ?>" />
-  
-  <!-- Twitter Cards -->
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="<?= htmlspecialchars($noticia['titulo']) ?>" />
   <meta name="twitter:description" content="<?= htmlspecialchars(mb_strimwidth(strip_tags($noticia['conteudo']), 0, 160, '...')) ?>" />
@@ -77,13 +73,11 @@ if ($busca !== '') {
     $where = " WHERE titulo LIKE :busca OR conteudo LIKE :busca ";
     $params[':busca'] = "%$busca%";
 }
-// Consulta total considerando busca
 $totalQuery = "SELECT COUNT(*) as total FROM noticias $where";
 $stmtTotal = $conn->prepare($totalQuery);
 $stmtTotal->execute($params);
 $totalNoticias = $stmtTotal->fetch(PDO::FETCH_ASSOC)['total'];
 $totalPaginas = ceil($totalNoticias / $limite);
-// Consulta das notícias considerando busca e paginação
 $sql = "SELECT id_noticia, titulo, imagem_noticia, conteudo, data_publicacao, id_unidade
         FROM noticias
         $where
@@ -91,11 +85,9 @@ $sql = "SELECT id_noticia, titulo, imagem_noticia, conteudo, data_publicacao, id
         LIMIT :limite OFFSET :offset";
 
 $stmt = $conn->prepare($sql);
-// Bind dos parâmetros de busca, se houver
 foreach ($params as $key => $value) {
     $stmt->bindValue($key, $value);
 }
-// Bind dos limites de paginação
 $stmt->bindValue(':limite', $limite, PDO::PARAM_INT);
 $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
@@ -138,14 +130,11 @@ $stmt->execute();
   <?php
   if ($stmt->rowCount() > 0) {
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-          // Se o banco já armazenar o caminho completo, use direto
-          // Caso o campo venha vazio, define um padrão completo
           $imagem_noticia = $row['imagem_noticia'];
 
     if (empty($imagem_noticia)) {
         $imagem_noticia = '/assets/noticias/img_capa/noticia.jpg'; // imagem padrão
     } elseif (!preg_match('#^(/|http)#', $imagem_noticia)) {
-        // Se NÃO começa com / ou http, é só o nome do arquivo
         $imagem_noticia = '/assets/noticias/img_capa/' . $imagem_noticia;
     }
 
@@ -169,7 +158,7 @@ $stmt->execute();
   ?>
 </div>
 
-      <!-- PAGINAÇÃO -->
+      <!-- Paginação -->
       <div class="paginacao" style="text-align:center; margin-top: 30px;">
         <?php
         $queryParams = $_GET;
@@ -201,12 +190,10 @@ $stmt->execute();
 
   <script type="module" src="<?= BASE_URL ?>/assets/js/main.js"></script>
   <script>
-      /* Tags barra de busca */
     function filtrarPorTag(tag) {
     const inputBusca = document.getElementById('busca-noticia');
     inputBusca.value = tag;
 
-    // Marca a tag clicada como ativa
     const tags = document.querySelectorAll('.tag-filters .tag');
     tags.forEach(el => {
       el.classList.toggle('active', el.textContent.toLowerCase() === tag.toLowerCase());

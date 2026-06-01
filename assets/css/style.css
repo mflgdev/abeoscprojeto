@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
-/* Reset bÃ¡sico */
 * {
   margin: 0;
   padding: 0;
@@ -61,7 +60,7 @@ body {
   font-size: 2rem;
 }
 
-/* Principais NotÃ­cias */
+/* Notícias */
 section.noticias.principais-noticias {
   display: flex;
   gap: 30px;
@@ -319,14 +318,13 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   }
 }
 
-/* ===== BLOCO QUEM SOMOS ===== */
+/* Quem somos */
 .quem-somos-block {
   max-width: 1100px;
   margin: 60px auto 80px;
   padding: 0 20px;
 }
 
-/* Layout principal */
 .quem-somos-content {
   display: flex;
   gap: 40px;
@@ -347,7 +345,6 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   margin-bottom: 20px;
 }
 
-/* Slider visual */
 .quem-somos-slider {
   max-width: 580px;
   border-radius: 20px;
@@ -367,7 +364,7 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   transform: scale(1.03);
 }
 
-/* EstatÃ­sticas */
+/* Estatísticas*/
 .quem-somos-stats {
   background-color: var(--cor-tema-background-claro);
   border-radius: 16px;
@@ -422,8 +419,6 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   line-height: 1.5;
 }
 
-
-/* Responsivo */
 @media (max-width: 900px) {
   .stat-item {
     flex: 1 1 45%;
@@ -436,7 +431,6 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   }
 }
 
-/* Responsividade */
 @media (max-width: 900px) {
   .quem-somos-content {
     flex-direction: column;
@@ -452,13 +446,11 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   }
 }
 
-
 .quem-somos-slider .slick-slide.slick-center img {
   transform: scale(1.12);
   transition: transform 0.5s ease;
 }
 
-/* Bloco de infogrÃ¡ficos */
 .quem-somos-stats {
   display: flex;
   justify-content: space-between;
@@ -467,19 +459,7 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   margin-top: 50px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Arrows Slick Slider Global */
+/* Arrows customizadas */
 .custom-arrow {
   background: red;
   border: none;
@@ -755,7 +735,7 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  margin: 0 10px; /* margem lateral pra espaçar cards */
+  margin: 0 10px;
   cursor: default;
 }
 
@@ -766,7 +746,6 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   color: var(--cor-fonte-textos);
 }
 
-/* Responsivo: abaixo de 700px, empilha vertical */
 @media (max-width: 700px) {
   .transparency-wrapper {
     flex-wrap: wrap;
@@ -782,7 +761,7 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   }
 }
 
-/* SEÇÃO DE DOAÇÃO */
+/* Seção Doação*/
 .donation {
   background-color: var(--cor-tema-background-claro);
   padding: 60px 20px;
@@ -807,8 +786,7 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   line-height: 1.6;
 }
 
-/* BOTÃO */
-/* ANIMAÇÃO DO BOTÃO */
+/* Botão Animado */
 .animated-button {
   animation: pulse 2s infinite;
 }
@@ -822,7 +800,7 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   }
 }
 
-/* ANIMAÇÃO DO ÍCONE DOAÇÃO */
+/* Ícone Doação Animado */
 .animated-icon {
   animation: heartbeat 1.5s infinite;
   display: inline-block;
@@ -846,7 +824,7 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   }
 }
 
-/* Dots Slick Slider Global */
+/* Dot Slick Globais */
  .slick-dots {
   display: flex !important;
   justify-content: center;
@@ -880,8 +858,6 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
 .slick-dots li button:hover {
   background-color: var(--cor-botao-hover);
 }
-/*FIM DOTS GLOBAL*/
-
 
 /*Navbar*/
 .navbar {
@@ -1222,7 +1198,6 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   border: 2px solid transparent;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -1366,7 +1341,6 @@ section.noticias.ultimas-noticias .custom-arrow:hover svg path {
   max-width: 100%;
 }
 
-/* CATEGORIAS GLOBAIS */
 /* Botões */
 button.donation {
   display: inline-block;
@@ -1413,140 +1387,114 @@ button:hover {
   background: var(--cor-botao-hover);
 }
 
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.intro {
+  text-align: left;
+  margin: 40px 0 20px;
+  color: var(--cor-fonte-textos-fraca);
+  font-size: 1.1rem;
+  }
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin: 40px 0;
+  }
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  }
+
+.banner h2 {
+  position: relative;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+  }
 
 
+.accordion {
+  border: 1px solid var(--cor-bordas);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background-color: var(--cor-tema);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  }
 
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  cursor: pointer;
+  background-color: var(--cor-tema);
+  color: var(--cor-fonte-secundaria);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  }
 
+.accordion-header:hover {
+  background-color: var(--cor-botao-hover);
+  }
 
+.accordion-header i {
+  transition: transform 0.3s ease;
+  }
 
+.accordion.active .accordion-header i {
+  transform: rotate(180deg);
+  }
 
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background-color: white;
+  padding: 0 20px;
+  }
 
+.accordion-content ul {
+  list-style: none;
+  padding: 16px 0;
+  margin: 0;
+  }
 
+.accordion-content li {
+  margin-bottom: 10px;
+  }
 
+.accordion-content a {
+  text-decoration: none;
+  color: var(--cor-fonte-primaria);
+  font-weight: 500;
+  }
 
+.accordion-content a:hover {
+  color: var(--cor-botao-hover);
+  text-decoration: underline;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .intro {
-      text-align: left;
-      margin: 40px 0 20px;
-      color: var(--cor-fonte-textos-fraca);
-      font-size: 1.1rem;
-    }
-
-    .banner {
-      background-size: cover;
-      background-position: center;
-      height: 200px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      margin: 40px 0;
-    }
-
-    .banner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-
-    .banner h2 {
-      position: relative;
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      text-align: center;
-      z-index: 1;
-    }
-
-
-    .accordion {
-      border: 1px solid var(--cor-bordas);
-      border-radius: 8px;
-      margin-bottom: 12px;
-      background-color: var(--cor-tema);
-      overflow: hidden;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .accordion-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-      cursor: pointer;
-      background-color: var(--cor-tema);
-      color: var(--cor-fonte-secundaria);
-      font-weight: 600;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-    }
-
-    .accordion-header:hover {
-      background-color: var(--cor-botao-hover);
-    }
-
-    .accordion-header i {
-      transition: transform 0.3s ease;
-    }
-
-    .accordion.active .accordion-header i {
-      transform: rotate(180deg);
-    }
-
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      background-color: white;
-      padding: 0 20px;
-    }
-
-    .accordion-content ul {
-      list-style: none;
-      padding: 16px 0;
-      margin: 0;
-    }
-
-    .accordion-content li {
-      margin-bottom: 10px;
-    }
-
-    .accordion-content a {
-      text-decoration: none;
-      color: var(--cor-fonte-primaria);
-      font-weight: 500;
-    }
-
-    .accordion-content a:hover {
-      color: var(--cor-botao-hover);
-      text-decoration: underline;
-    }
-
-
-    /* Currículo */
-    .curriculo-section {
+/* Currículo */
+.curriculo-section {
   max-width: 700px;
   margin: 40px auto;
   padding: 0 20px;
@@ -1652,28 +1600,7 @@ button:hover {
   gap: 6px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilizar Detalhes Notícias para Mobile */
-/* Estilos base */
+/* Notícias */
 .noticia-detalhada {
   max-width: 800px;
   margin: 0 auto;
@@ -1721,7 +1648,6 @@ button:hover {
   text-decoration: underline;
 }
 
-/* Estilos mobile */
 @media (max-width: 768px) {
   .noticia-detalhada {
     padding: 15px 10px;
@@ -1744,7 +1670,7 @@ button:hover {
   }
 }
 
-/* Estilos para telas ainda menores (celulares) */
+/* Celular */
 @media (max-width: 480px) {
   .noticia-detalhada {
     padding: 10px 5px;
@@ -1759,8 +1685,7 @@ button:hover {
   }
 }
 
-
-/* Estilizar barra de busca Notícias */
+/* Barra de busca - Notícia */
 .search-bar {
   display: flex;
   align-items: center;
@@ -1828,7 +1753,6 @@ button:hover {
   color: var(--cor-botao-texto);
 }
 
-/* Responsivo */
 @media (max-width: 480px) {
   .search-bar {
     max-width: 100%;
@@ -1840,21 +1764,11 @@ button:hover {
 }
 
 
-
-
-
-
-
-
-
-
-
-/* Página Quem Somos - Sobre*/
-  /* Banner Slick */
-  .abe-sobre-section {
-    color: var(--cor-fonte-textos);
+/* Página Quem Somos*/
+.abe-sobre-section {
+  color: var(--cor-fonte-textos);
   }
-  .abe-sobre-container--fullwidth {
+.abe-sobre-container--fullwidth {
     margin: 0 auto;
     background: var(--cor-tema-background);
     border-radius: 16px;
@@ -1862,85 +1776,85 @@ button:hover {
     line-height: 1.6;
     padding: 40px 60px;
   }
-  .abe-sobre-container__title {
-    color: var(--cor-titulos);
-    font-weight: 700;
-    font-size: 2.6rem;
-    margin-bottom: 30px;
-    text-align: center;
+.abe-sobre-container__title {
+  color: var(--cor-titulos);
+  font-weight: 700;
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+  text-align: center;
   }
-  .abe-sobre-container--fullwidth p {
-    margin-bottom: 18px;
-    font-size: 1.15rem;
+.abe-sobre-container--fullwidth p {
+  margin-bottom: 18px;
+  font-size: 1.15rem;
   }
-  .abe-sobre-container--fullwidth strong {
-    color: var(--cor-tema);
+
+.abe-sobre-container--fullwidth strong {
+  color: var(--cor-tema);
   }
 
   /* Responsivo */
-  @media (max-width: 600px) {
-    .abe-sobre-container--fullwidth {
-      padding: 25px 20px;
+@media (max-width: 600px) {
+  .abe-sobre-container--fullwidth {
+    padding: 25px 20px;
     }
-    .abe-sobre-container__title {
-      font-size: 2rem;
+  .abe-sobre-container__title {
+    font-size: 2rem;
     }
-    .abe-sobre-container--fullwidth p {
-      font-size: 1rem;
+  .abe-sobre-container--fullwidth p {
+    font-size: 1rem;
     }
+}
+
+    /* CARDS Missão, Visão e Valores */
+.cards-container {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
   }
 
-    /* CARDS MISSÃO, VISÃO E VALORES */
+.card {
+  background: var(--cor-tema-background);
+  border-radius: 8px;
+  padding: 25px 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  flex: 1 1 280px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  }
 
-    .cards-container {
-      display: flex;
-      gap: 25px;
-      margin-bottom: 60px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+.card h3 {
+  color: var(--cor-titulos);
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+  }
 
-    .card {
-      background: var(--cor-tema-background);
-      border-radius: 8px;
-      padding: 25px 20px;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-      flex: 1 1 280px;
-      min-width: 280px;
-      display: flex;
-      flex-direction: column;
-    }
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  }
 
-    .card h3 {
-      color: var(--cor-titulos);
-      margin-bottom: 18px;
-      font-size: 1.5rem;
-    }
+.card ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  color: var(--cor-fonte-textos-fraca);
+  font-size: 1rem;
+  }
 
-    .card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      flex-grow: 1;
-    }
+.card ul li i {
+  color: var(--cor-tema);
+  margin-right: 10px;
+  min-width: 18px;
+  text-align: center;
+  }
 
-    .card ul li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 12px;
-      color: var(--cor-fonte-textos-fraca);
-      font-size: 1rem;
-    }
-
-    .card ul li i {
-      color: var(--cor-tema);
-      margin-right: 10px;
-      min-width: 18px;
-      text-align: center;
-    }
-
-    /* QUEM SOMOS */
+/* QUEM SOMOS */
 .quem-somos-modern {
   background-color: var(--cor-tema-background-claro);
   padding: 60px 20px;
@@ -2008,8 +1922,7 @@ button:hover {
   color: var(--cor-fonte-primaria);
 }
 
-/* ---- Nossas Unidades ---- */
-
+/* Nossas Unidades */
 .unidades-modern {
   background-color: var(--cor-tema-background-claro);
   padding: 60px 20px;
@@ -2082,8 +1995,6 @@ button:hover {
   flex-grow: 1;
 }
 
-/* Responsivo */
-
 @media (max-width: 768px) {
   .qs-bloco,
   .qs-bloco.invertido {
@@ -2100,8 +2011,7 @@ button:hover {
   }
 }
 
-
-/* TIMELINE HORIZONTAL */
+/* Timeline Horizontal */
 .timeline-horizontal {
   width: 100%;
   max-width: 1100px;
@@ -2188,32 +2098,31 @@ button:hover {
   color: var(--cor-fonte-textos-fraca);
 }
 
-/* Esconde a barra de rolagem */
+/* Scbrollbar Oculto */
 .timeline-wrapper::-webkit-scrollbar {
   display: none;
 }
 
 .timeline-wrapper {
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none; /* Firefox */
-}
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-
-    @media (max-width: 900px) {
-      .sobre-slider-container {
-        flex-direction: column;
-      }
-
-      .slider-container,
-      .sobre-texto {
-        max-width: 100%;
-      }
-
-      .cards-container {
-        flex-direction: column;
-        align-items: center;
-      }
+@media (max-width: 900px) {
+  .sobre-slider-container {
+    flex-direction: column;
     }
+
+  .slider-container,
+  .sobre-texto {
+    max-width: 100%;
+    }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    }
+}
 
 
 

@@ -3,19 +3,15 @@
 $title = $title ?? 'Associação Beneficente Evangélica - ABE';
 $description = $description ?? 'A Associação Beneficente Evangélica atua há mais de 30 anos no DF, oferecendo apoio social e educação infantil para 1.011 crianças de 0 a 5 anos em situação de vulnerabilidade, com a dedicação de 230 profissionais em seis unidades de ensino.';
 $image = $image ?? 'https://site.com/assets/img/og-default.jpg';
-// Últimas notícias
 $sql = "SELECT id_noticia, titulo, imagem_noticia, conteudo, data_publicacao, id_unidade FROM noticias ORDER BY data_publicacao DESC LIMIT 5";
 $result = $conn->query($sql);
 
-// Super destaque (destaque = 2)
 $sqlSuperDestaque = "SELECT id_noticia, titulo, imagem_noticia, conteudo, data_publicacao FROM noticias WHERE destaque = 2 ORDER BY data_publicacao DESC LIMIT 5";
 $resultSuper = $conn->query($sqlSuperDestaque);
 
-// Destaques menores (destaque = 1)
 $sqlDestaques = "SELECT id_noticia, titulo, imagem_noticia FROM noticias WHERE destaque = 1 ORDER BY data_publicacao DESC LIMIT 4";
 $resultDestaques = $conn->query($sqlDestaques);
 
-// Verifica erros nas consultas
 if (!$result || !$resultSuper || !$resultDestaques) {
     die("Erro em uma das consultas: " . $conn->error);
 }
@@ -38,7 +34,7 @@ function resumoTexto($html, $limite = 200) {
 </head>
 <body>
   <main>
-    <!-- Slider com fundo e cards fixos -->
+    <!-- Slider cards-->
      <!--<h2 class="section-title"><i class="fa-regular fa-newspaper"></i>Últimas Notícias</h2>!-->
   <section class="noticias principais-noticias">
 
@@ -48,7 +44,6 @@ function resumoTexto($html, $limite = 200) {
   if ($resultSuper && $resultSuper->rowCount() > 0) {
       while ($super = $resultSuper->fetch(PDO::FETCH_ASSOC)) {
           $imagem_super = !empty($super['imagem_noticia']) ? $super['imagem_noticia'] : '/assets/noticias/img_capa/noticia.jpg';
-          // Usa direto, sem concatenar
           $caminho_super = $imagem_super;
   ?>
     <div class="slide-item">
@@ -94,14 +89,13 @@ function resumoTexto($html, $limite = 200) {
   </ul>
 </aside>
 </section>
- <!-- Exibição das últimas notícias -->
+ <!-- Notícias -->
 <section class="noticias ultimas-noticias">
   <h2 class="section-title"><i class="fa-regular fa-newspaper"></i>Últimas Notícias</h2>
   <div class="main-ultimas-noticias">
     <?php
     if ($result->rowCount() > 0) {
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            // Usa direto o caminho da imagem vindo do banco, ou um padrão se vazio
             $imagem_noticia = $row['imagem_noticia'];
             if (empty($imagem_noticia)) {
                 $imagem_noticia = '/assets/noticias/img_capa/noticia.jpg';
@@ -127,7 +121,7 @@ function resumoTexto($html, $limite = 200) {
     ?>
   </div>
 </section>
-  <!-- BLOCO: QUEM SOMOS -->
+  <!-- QUEM SOMOS -->
 <section class="quem-somos-block">
   <h2 class="section-title"><i class="fa-solid fa-users"></i> Quem somos</h2>
   <div class="quem-somos-content">
@@ -177,14 +171,11 @@ $stmt = $conn->query("SELECT * FROM unidades ORDER BY nome");
                     : '/assets/img/default-unidade.jpg';
 
           $modalTitle = htmlspecialchars($unidade['nome'], ENT_QUOTES);
-
-          // Conteúdo modal, sem tags HTML para não complicar o escaping
           $modalContent = 
               $unidade['endereco'] . "\n" .
               "<strong>Horário:</strong> " . $unidade['horario_funcionamento'] . "\n" .
               "<strong>Telefone:</strong> " . $unidade['telefone'];
 
-          // Adiciona loading="lazy" no iframe do Google Maps
           $modalMap = str_replace(
             '<iframe',
             '<iframe loading="lazy"',
@@ -212,20 +203,7 @@ $stmt = $conn->query("SELECT * FROM unidades ORDER BY nome");
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Bloco Transparência -->
+<!-- Transparência -->
 <section class="transparency-wrapper">
   <div class="transparency-left">
     <h2>Portal da Transparência</h2>
@@ -233,7 +211,7 @@ $stmt = $conn->query("SELECT * FROM unidades ORDER BY nome");
     <a href="/transparencia"><button class="button">Ver Mais</button></a>
   </div>
 
-  <!-- Lado direito: slider com cards -->
+  <!-- Slider com cards -->
   <div class="transparency-right">
     <div class="transparency-slider">
       <div class="transp-card">
@@ -257,9 +235,6 @@ $stmt = $conn->query("SELECT * FROM unidades ORDER BY nome");
 </section>
       </main>
 
-
-
-
 <section class="apoio-carousel-container">
   <h2 class="section-title"><i class="fa-regular fa-newspaper"></i> Nossos Apoiadores</h2>
   <div class="apoio-carousel-slider">
@@ -277,15 +252,7 @@ $stmt = $conn->query("SELECT * FROM unidades ORDER BY nome");
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-<!-- DOAÇÃO PÁGINA INICIAL-->
+<!-- Doação -->
 <section class="donation">
   <div class="donation-container">
     <h2 class="donation-title">
@@ -302,7 +269,7 @@ $stmt = $conn->query("SELECT * FROM unidades ORDER BY nome");
 
 <script>
   $(document).ready(function() {
-    // Slider notícias
+    // Notícias
     $('.main-ultimas-noticias').slick({
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -336,7 +303,7 @@ $stmt = $conn->query("SELECT * FROM unidades ORDER BY nome");
       ]
     });
 
-    // Slider "Quem somos"
+    // Quem somos"
     $('.quem-somos-slider').slick({
       centerMode: true,
       centerPadding: '0px',
@@ -370,7 +337,7 @@ $stmt = $conn->query("SELECT * FROM unidades ORDER BY nome");
       ]
     });
 
-    // Slider Unidades
+    // Unidades
     $('.unidades-slider').slick({
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -405,7 +372,7 @@ $stmt = $conn->query("SELECT * FROM unidades ORDER BY nome");
       ]
     });
 
-    // Slider Transparência
+    // Transparência
     $('.transparency-slider').slick({
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -424,14 +391,14 @@ $stmt = $conn->query("SELECT * FROM unidades ORDER BY nome");
       ]
     });
 
-    // Slider Apoio Carousel
+    // Apoio Carousel
 $('.apoio-carousel-slider').slick({
   centerMode: true,
   centerPadding: '60px',
   slidesToShow: 5,
   arrows: false,
   autoplay: true,
-  autoplaySpeed: 1500, // <- correção aqui: estava "autoplayspeed"
+  autoplaySpeed: 1500,
   responsive: [
     {
       breakpoint: 768,
@@ -452,7 +419,7 @@ $('.apoio-carousel-slider').slick({
     }
   ]
 });
-    // Slider Super Destaques
+    // Super Destaques
     $('.slider-super-destaques').slick({
       dots: false,
       arrows: false,
@@ -464,8 +431,6 @@ $('.apoio-carousel-slider').slick({
     });
   });
 </script>
-
-
 
 <div id="global-modal" class="modal">
   <div class="modal-content">

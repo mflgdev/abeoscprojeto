@@ -37,7 +37,6 @@
     </div>
   </div>
 
-  <!-- copyright separado -->
   <div class="footer-bottom">
     <p class="footer-copy">© 2025 ASSOCIAÇÃO BENEFICENTE EVANGÉLICA - ABE CNPJ: 00.574.806/0012-46. Todos os direitos reservados.</p>
   </div>

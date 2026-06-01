@@ -14,7 +14,6 @@
       <a href="#">Unidades</a>
       <ul class="dropdown-menu">
         <?php
-          // Buscar unidades com nome e slug
           $stmt = $conn->query("SELECT nome, slug FROM unidades ORDER BY nome ASC");
           $unidades = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

@@ -19,7 +19,7 @@ $banners = $stmt_banners->fetchAll(PDO::FETCH_ASSOC);
   <div class="container">
     <?php foreach ($banners as $banner): ?>
       <?php 
-        // Define o background ou uma imagem padrão caso não tenha
+        // Fallback imagem
         $bgImage = !empty($banner['imagem']) ? $banner['imagem'] : 'https://picsum.photos/1200/300'; 
       ?>
       <div 
